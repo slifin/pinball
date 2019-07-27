@@ -3,13 +3,15 @@
             [game.control :as control])
   (:import [UnityEngine Vector3]))
 
-(defonce cube (create-primitive :cube "player"))
+(defn setup []
+ (let [back (create-primitive :plane "back")
+       bottom (create-primitive :cube "bottom")])
+ (control/move! bottom (Vector3. 0 -5 0))
+ (control/scale! bottom (Vector3. 1 1 15))
 
-(defonce plane
-  (create-primitive :plane "back"))
+ (control/move! back (Vector3. 0 0 0))
+ (control/rotate! back (Vector3. 0 0 -90)))
 
-(control/move! plane (Vector3. 0 0 0))
-(control/scale! cube (Vector3. 1 5 1))
-(control/rotate! plane (Vector3. 0 0 90))
-
+(defn setdown []
+ ())
 
