@@ -1,0 +1,4 @@
+Arcadia/
+*.meta
+arcadia.nrepl
+.DS_Store
